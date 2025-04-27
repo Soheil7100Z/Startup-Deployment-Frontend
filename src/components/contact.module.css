@@ -1,0 +1,66 @@
+#container {
+    margin: 2rem 15rem;
+    font-size: var(--text-mlg);
+}
+.form {
+
+    display: grid;
+    grid-template-columns: repeat(2 ,1fr);
+    gap: 1rem 15rem;
+
+}
+.form select {
+    display: flex;
+    justify-self: end;
+}
+.selectionIcon {
+    width: 12.4rem;
+    padding: 1rem;
+    border-radius: .5rem;
+    outline: none;
+    border: 3px solid #192a56;
+
+}
+.perosnInfo{
+    display: flex;
+    justify-content: space-between;
+
+}
+.perosnInfo input{
+    padding: 1rem;
+    outline: none;
+    border-radius: .5rem;
+    border:3px solid #192a56;
+
+}
+.perosnInfo label{
+
+    padding: 1rem 0;
+}
+.textArea{
+    display: flex;
+    justify-self: center;
+    margin-top: 2rem;
+    width: 100%;
+    min-height: 8rem;
+    height: auto;
+    resize: none;
+    padding: 1.5rem;
+    border-radius: .5rem;
+    font-size: var(--text-md);
+    border: 3px solid #192a56;
+}
+
+.button {
+    display: flex;
+    margin-top: 2rem;
+    font-weight: bold;
+    color: #fff;
+    padding: 1rem 2rem;
+    background-color: #192a56;
+    border-radius: .5rem;
+    font-size: var(--text-md);
+}
+.button:hover{
+    opacity: .8;
+}

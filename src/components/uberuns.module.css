@@ -1,0 +1,26 @@
+.container {
+    margin: 2rem 5rem;
+    font-size: var(--text-mlg);
+    text-align: justify;
+
+}
+.contactInfos {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    font-size: var(--text-basic);
+    margin-Top: 5rem;
+}
+.socialLinks{
+    margin-top: 2rem;
+    display: flex;
+    gap: 1rem;
+}
+.socialLinks a {
+    text-decoration: none;
+    font-size: var(--text-xl) !important;
+    color: black;
+}
+.socialLinks a:hover {
+    opacity: .7;
+}

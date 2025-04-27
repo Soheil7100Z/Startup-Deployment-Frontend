@@ -1,0 +1,38 @@
+#container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #192a56;
+    padding: 1.5rem;
+
+
+}
+.title {
+    color: #ecf0f1;
+    font-size: var(--text-xl);
+    font-weight: bold;
+    margin-left: 9rem;
+
+
+}
+#container a {
+    text-decoration: none;
+    color: black;
+    font-size: var(--text-mlg);
+    padding: .5rem 1rem;
+    background-color: #ecf0f1;
+    border-radius: .5rem;
+}
+#container a:hover{
+    opacity: .7;
+}
+.logo {
+    font-size: var(--text-xl) !important;
+    display: flex;
+    padding: 1rem !important;
+    border-radius: 50% !important;
+}
+.rightSide {
+    display: flex;
+    gap: 1rem;
+}
