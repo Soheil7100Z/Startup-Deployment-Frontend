@@ -21,9 +21,10 @@ input[type=number] {
 .form select {
     display: flex;
     justify-self: end;
+    font-size: var(--tex-md);
 }
 .selectionIcon {
-    width: 13rem;
+    width: 18rem;
     padding: 1rem;
     border-radius: .5rem;
     outline: none;
@@ -36,12 +37,14 @@ input[type=number] {
 
 }
 .perosnInfo input{
-    width: 13rem;
+    width: 18rem;
     height: 3.5rem;
     padding: 1rem;
     outline: none;
     border-radius: .5rem;
     border:3px solid #192a56;
+    font-size: var(--tex-md);
+
 
 
 }
@@ -62,6 +65,7 @@ input[type=number] {
     font-size: var(--text-md);
     border: 3px solid #192a56;
     outline: none;
+    font-family: inherit;
 }
 
 .button {

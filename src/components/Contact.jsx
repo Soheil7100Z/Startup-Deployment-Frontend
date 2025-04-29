@@ -1,9 +1,10 @@
-import { useState } from 'react'
+import { useRef , useState } from 'react'
 import styles from './contact.module.css'
 import {FaRegPaperPlane} from 'react-icons/fa'
 
 const Contact = () => {
 
+    let emailValidation = ''
     const inputElements = document.querySelectorAll('input')
 
     const [inputVor , settingInputVor] = useState('')
@@ -12,11 +13,19 @@ const Contact = () => {
     const [inputTel , settingInputTel] = useState('')
     const [inputPost , settingInputPost] = useState('')
     const [inputText , settingInputText] = useState('')
+    const [inputAnrede , settingInputAnrede] = useState('Herr')
 
     const [errorVor , settingErrorVor] = useState('')
     const [errorNach , settingErrorNach] = useState('')
     const [errorEmail , settingErrorEmail] = useState('')
     const [errorText , settingErrorText] = useState('')
+    const [errorValidationEmail, settingValidationEmail] = useState('')
+
+    const inputEmailRef = useRef(null)
+
+    const currentInputAnrede = (event) =>{
+        settingInputAnrede(event.target.value)
+    }
 
     const currentInputVor = (event) => {
         settingInputVor(event.target.value)
@@ -33,8 +42,6 @@ const Contact = () => {
     }
 
     const currentInputEmail = (event) => {
-        // const EmailValidity = checkValidity(event.target)
-        // console.log(EmailValue)
         settingInputEmail(event.target.value)
         if(inputEmail !== ''){
             settingErrorEmail('')
@@ -53,6 +60,16 @@ const Contact = () => {
         settingInputText(event.target.value)
         if(inputText !== ''){
             settingErrorText('')
+        }
+    }
+
+    const validationChecker = () => {
+        if (!inputEmailRef.current.checkValidity()){
+            settingValidationEmail('NotValid')
+            emailValidation = 'NotValid'
+        }else{
+            settingValidationEmail('')
+            emailValidation = ''
         }
     }
 
@@ -82,26 +99,32 @@ const Contact = () => {
                 settingErrorText('')
             }
 
-            if (inputVor!=='' && inputNach!=='' && inputEmail!=='' && inputText!==''){
+            if (inputVor!=='' && inputNach!=='' && inputEmail!=='' && inputText!=='' && emailValidation === ''){
+                let userData = []
+                let keys = ["Anrede","Vorname" , "Nachname" , "Email" , "Telefonnummer" , "Postleitzahl"]
+                userData.push(inputAnrede,inputVor,inputNach,inputEmail,inputTel,inputPost)
+                let userDataObject = Object.fromEntries(keys.map((key , i) => [key , userData[i]]))
                 settingInputVor('')
                 settingInputNach('')
                 settingInputEmail('')
                 settingInputTel('')
                 settingInputPost('')
                 settingInputText('')
+                console.log(userDataObject)
             }
 
         })
     }
 
+
   return (
-    <form id={styles.container}>
+    <form id={styles.container} >
         <span style={{display: 'block', marginBottom: '2rem' }}>Sie haben eine Frage? Dann schreiben Sie uns! Wir bemühen uns Ihr Anliegen zu bearbeiten und setzen uns schnellstmöglich mit Ihnen in Verbindung.</span>
         <span  style={{display: 'block', marginBottom: '2rem', fontWeight: 'bold', fontSize:'var(--text-lg)' }}>Persönliche Angaben</span>
         <div className={styles.form}>
             <div className={styles.perosnInfo}>
                 <label>Anrede:</label>
-                <select className={styles.selectionIcon}>
+                <select className={styles.selectionIcon} value={(inputAnrede)} onChange={currentInputAnrede}>
                         <option>Herr</option>
                         <option>Frau</option>
                         <option>Dr.</option>
@@ -120,8 +143,10 @@ const Contact = () => {
             </div>
 
             <div className={styles.perosnInfo}>
-                <label style={{color: errorEmail ? '#EA2027' : ''}}>E-Mail*:</label>
-                <input type="Email" value={inputEmail} onChange={currentInputEmail} style={{borderColor: errorEmail ? '#EA2027' : ''}}/>
+                <label style={{color: (errorEmail || errorValidationEmail) ? '#EA2027' : ''}}>E-Mail*:</label>
+                <input  type="Email" ref={inputEmailRef}
+                value={inputEmail} onChange={currentInputEmail}
+                style={{borderColor: (errorEmail || errorValidationEmail) ? '#EA2027' : ''}}/>
             </div>
 
             <div className={styles.perosnInfo}>
@@ -140,8 +165,10 @@ const Contact = () => {
         style={{borderColor: errorText ? '#EA2027' : ''}}
           ></textarea>
 
-        {(errorVor||errorNach||errorEmail||errorText) && <div style={{color: '#EA2027', fontSize:'1.5rem', left: '18.5rem', marginTop:'1rem'}}>Bitte füllen Sie die Angaben* aus, sie sind notwendig !</div>}
-        <button type="button" onClick={submittingUser} className={styles.button}>
+        {errorValidationEmail && <div style={{ color: '#EA2027', fontSize:'1.3rem'}}>Bitte geben Sie eine gültige E-Mail ein !</div>}
+
+        {(errorVor||errorNach||errorEmail||errorText) && <div style={{color: '#EA2027', fontSize:'1.3rem', marginTop:'1rem'}}>Bitte füllen Sie die * aus, sie sind die Pflichtangaben !</div>}
+        <button type="button" onClick={() => {validationChecker(), submittingUser()}} className={styles.button}>
             <FaRegPaperPlane  style={{ marginRight: '.8rem'}} />
             SENDEN</button>
 
