@@ -9,7 +9,8 @@ import './App.css'
 import MainLayout from './layout/MainLayout'
 import HomePage from './pages/HomePage'
 import UberUnsPage from './pages/UberUnsPage'
-import Contact from './components/Contact'
+import ContactPage from './components/Contact'
+import ProductPage from './pages/ProductPage'
 
 const App = () => {
     const router = createBrowserRouter(
@@ -17,7 +18,8 @@ const App = () => {
            <Route path='/' element= {<MainLayout/>}>
                 <Route index element= {<HomePage/>}/>
                 <Route path='/uber' element= {<UberUnsPage/>}/>
-                <Route path='/kontakt' element= {<Contact/>}/>
+                <Route path='/kontakt' element= {<ContactPage/>}/>
+                <Route path='/Produkt' element= {<ProductPage/>}/>
            </Route>
         )
     )
