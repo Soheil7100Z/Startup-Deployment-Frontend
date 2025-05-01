@@ -3,21 +3,20 @@
     justify-content: space-between;
     align-items: center;
     background-color: #192a56;
-    padding: 1.5rem;
-
-
+    padding: .7rem 1.5rem;
 }
+
 .title {
     color: #ecf0f1;
     font-size: var(--text-xl);
     font-weight: bold;
     margin-left: 9rem;
-
-
+    display: flex;
+    align-items: center;
 }
 #container a {
     text-decoration: none;
-    color: black;
+    color: #192a56;
     font-size: var(--text-mlg);
     padding: .5rem 1rem;
     background-color: #ecf0f1;
@@ -26,13 +25,63 @@
 #container a:hover{
     opacity: .7;
 }
+
+.leftSide {
+    display: flex;
+    align-items: center;
+    gap: 1.5rem;
+}
+.menuSign {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+    cursor: pointer;
+    padding: .5rem;
+    border-radius: .2rem;
+}
+
+.menuSign > span {
+    height: 3px;
+    width: 35px;
+    background-color: #ecf0f1;
+}
+.menuSign:hover{
+    background-color: #199ac2;
+}
+
+.menu {
+    background-color: #ecf0f1;
+    display: grid;
+    gap: .8rem;
+    position: absolute;
+    top: 4.5rem;
+    left: 2rem;
+    padding: .5rem 0;
+    color: #192a56;
+    font-weight: bold;
+    border-radius: .2rem;
+}
+
+.menuSign:hover{
+    opacity: .8;
+}
 .logo {
     font-size: var(--text-xl) !important;
     display: flex;
     padding: 1rem !important;
     border-radius: 50% !important;
 }
+
 .rightSide {
     display: flex;
     gap: 1rem;
+    font-weight: bold;
+}
+.contactIcon {
+    font-size: 2rem;
+    margin-right: .5rem ;
+}
+.uberUns {
+    display: flex;
+    align-items: center;
 }

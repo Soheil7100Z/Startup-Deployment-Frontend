@@ -1,4 +1,5 @@
 #container {
+    margin: 0 9rem;
     display: grid;
     grid-template-columns: repeat(3 , 1fr);
     gap: 3rem 2.5rem;
