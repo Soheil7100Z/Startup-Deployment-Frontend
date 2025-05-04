@@ -54,8 +54,6 @@ input[type=number] {
     justify-self: center;
     margin: 2rem 0 2rem 0;
     width: 100%;
-    min-height: 8rem;
-    height: auto;
     resize: none;
     padding: 1.5rem;
     border-radius: .5rem;
