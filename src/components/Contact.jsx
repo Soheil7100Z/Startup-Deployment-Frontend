@@ -12,6 +12,9 @@ const Contact = () => {
     const [inputText , settingInputText] = useState('')
     const [inputAnrede , settingInputAnrede] = useState('Herr')
 
+    const [messageSent , settingmessageSent] = useState('')
+    const [messageNotSent , settingmessageNotSent] = useState('')
+
     const [errorVor , settingErrorVor] = useState('')
     const [errorNach , settingErrorNach] = useState('')
     const [errorEmail , settingErrorEmail] = useState('')
@@ -61,7 +64,7 @@ const Contact = () => {
     }
 
 
-    const submitData = (e) => {
+    const submitData = async(e) => {
         e.preventDefault()
         if (!inputVor){
             settingErrorVor('required')
@@ -97,11 +100,18 @@ const Contact = () => {
                 settingInputTel('')
                 settingInputPost('')
                 settingInputText('')
-                console.log('submit' , userDataObject)
                 try {
-                    console.log('submission is working')}
+                    const response = await fetch('http://localhost:3000/send' , {
+                        method: 'POST',
+                        headers: {'content-type' : 'application/json'},
+                        body:JSON.stringify(userDataObject),
+                    })
+                    const UserInfo = await response.json()
+                    settingmessageSent('Vielen Dank! Ihre Anfrage wurde erfolgreich übermittelt. Unser Team wird sich zeitnah bei Ihnen melden.')
+                    console.log(UserInfo)
+                }
                 catch (error) {
-                    console.error(error);
+                    settingmessageNotSent('Ein technischer Fehler ist aufgetreten. Bitte versuchen Sie es später erneut. Wir bitten um Entschuldigung und danken für Ihr Verständnis.')
                   }
         }
 }
@@ -128,6 +138,8 @@ const Contact = () => {
         }else {
             settingErrorText('')
         }
+        settingmessageSent('')
+        settingmessageNotSent('')
     }
 
 
@@ -180,8 +192,9 @@ const Contact = () => {
           ></textarea>
 
         {errorValidationEmail && <div style={{ color: '#EA2027', fontSize:'1.3rem'}}>Bitte geben Sie eine gültige E-Mail ein !</div>}
-
         {(errorVor||errorNach||errorEmail||errorText) && <div style={{color: '#EA2027', fontSize:'1.3rem', marginTop:'1rem'}}>Bitte füllen Sie die * aus, sie sind die Pflichtangaben !</div>}
+        {messageSent && <div style={{ color: '#192a56', fontSize:'1.5rem', fontWeight: 'bold'}}> {messageSent} </div>}
+        {messageNotSent && <div style={{ color: '#EA2027', fontSize:'1.5rem', fontWeight: 'bold'}}> {messageNotSent} </div>}
         <button type="submit" onClick={Beforesubmission} className={styles.button}>
             <FaRegPaperPlane  style={{ marginRight: '.8rem'}} />
             SENDEN</button>
