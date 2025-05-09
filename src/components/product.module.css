@@ -41,7 +41,8 @@
     font-weight: bold;
 }
 .button{
-    width: 13rem;
+    text-decoration: none;
+    max-width: 7rem;
     padding: 1rem 1.5rem;
     background-color: #192a56 ;
     color: #fff;

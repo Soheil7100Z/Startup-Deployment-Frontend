@@ -1,5 +1,6 @@
 import { useState } from 'react'
 import styles from './product.module.css'
+import { NavLink } from 'react-router-dom';
 
 
 function Product({item}) {
@@ -22,7 +23,7 @@ function Product({item}) {
                     <div className={styles.price}>Preis: {item.price}</div>
                 </div>
             </div>
-            <button className={styles.button}> {item.title} Kaufen</button>
+            <NavLink to={`${item.id}`} className={styles.button}>Kaufen</NavLink>
         </div>
 
   )
