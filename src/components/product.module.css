@@ -42,7 +42,8 @@
 }
 .button{
     text-decoration: none;
-    max-width: 7rem;
+    display: block;
+    width: 10.2rem;
     padding: 1rem 1.5rem;
     background-color: #192a56 ;
     color: #fff;
@@ -52,6 +53,7 @@
     border: none;
     font-weight: bold;
 }
+
 .button:hover{
     opacity: .8;
 }

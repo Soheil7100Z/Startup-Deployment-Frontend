@@ -36,7 +36,7 @@ const Navar = () => {
 
         <div className={styles.title}>
         <div className={styles.logo}><FaReact/></div>
-            Start Up</div>
+            Start Up - Soheil Zaremehrjardi</div>
         <div className={styles.rightSide}>
             <NavLink to="/uber" className={styles.uberUns}>
 

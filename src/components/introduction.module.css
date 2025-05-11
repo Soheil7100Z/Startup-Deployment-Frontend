@@ -2,7 +2,7 @@
     background:  linear-gradient(160deg, rgb(13, 68, 150), rgba(129, 191, 233, 0.842) 60% ); ;
     font-size: var(--text-lg);
     padding: 0 20rem;
-    height: 85vh;
+    height: 100vh;
     text-align: center;
     display: flex;
     flex-direction: column;

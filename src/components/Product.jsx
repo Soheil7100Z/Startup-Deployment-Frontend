@@ -4,7 +4,7 @@ import { NavLink } from 'react-router-dom';
 
 
 function Product({item}) {
-    let description = item.description
+    let description = item.descriptionShort
     const [cutText, cuttingText] = useState(true)
     if (cutText) {
         description = description.substring(0,120) + '...'
@@ -23,7 +23,7 @@ function Product({item}) {
                     <div className={styles.price}>Preis: {item.price}</div>
                 </div>
             </div>
-            <NavLink to={`${item.id}`} className={styles.button}>Kaufen</NavLink>
+            <NavLink to={`${item.id}`} className={styles.button}>Mehr Details</NavLink>
         </div>
 
   )

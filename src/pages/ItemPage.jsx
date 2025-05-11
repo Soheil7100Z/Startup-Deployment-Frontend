@@ -1,5 +1,7 @@
+import styles from './itemPage.module.css'
 import { useParams } from 'react-router-dom'
 import { useState , useEffect } from 'react'
+
 function ItemPage() {
 
   const {id} = useParams()
@@ -19,7 +21,20 @@ function ItemPage() {
 
   return (
      <>
-      {ProductList.description}
+      <section >
+        <article>
+          <h1>{ProductList.title}</h1>
+          <h2>Preis: {ProductList.price}</h2>
+        </article>
+
+        <img src={ProductList.img} alt={ProductList.title} />
+
+      </section>
+      <div className={styles.des}>
+
+            {ProductList.description}
+
+      </div>
      </>
 )
 
