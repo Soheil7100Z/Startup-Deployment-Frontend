@@ -1,24 +1,10 @@
 import styles from './itemPage.module.css'
-import { useParams } from 'react-router-dom'
-import { useState , useEffect } from 'react'
+import { useParams ,useLoaderData } from 'react-router-dom'
+// import { useState , useEffect } from 'react'
 
 function ItemPage() {
 
-  const {id} = useParams()
-  const [ProductList, settingProducts] = useState([])
-   useEffect( () => {
-      const productsFetch = async () => {
-        try {
-          const res = await fetch(`/api/products/${id}`)
-          const data = await res.json()
-          settingProducts(data)
-        } catch (error) {
-
-        }
-      }
-      productsFetch()
-    } ,[])
-
+  const ProductList = useLoaderData()
   return (
      <>
       <section >
@@ -40,4 +26,25 @@ function ItemPage() {
 
 };
 
-export default ItemPage;
+const itemLoader = async ({params}) => {
+  const res = await fetch(`/api/products/${params.id}`)
+  const data = await res.json()
+  return data
+}
+
+export {ItemPage as default , itemLoader};
+
+ // const {id} = useParams()
+  // const [ProductList, settingProducts] = useState([])
+  //  useEffect( () => {
+  //     const productsFetch = async () => {
+  //       try {
+  //         const res = await fetch(`/api/products/${id}`)
+  //         const data = await res.json()
+  //         settingProducts(data)
+  //       } catch (error) {
+
+  //       }
+  //     }
+  //     productsFetch()
+  //   } ,[])

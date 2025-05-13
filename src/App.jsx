@@ -11,7 +11,7 @@ import HomePage from './pages/HomePage'
 import UberUnsPage from './pages/UberUnsPage'
 import ContactPage from './components/Contact'
 import ProductPage from './pages/ProductPage'
-import ItemPage from './pages/ItemPage'
+import ItemPage , {itemLoader} from './pages/ItemPage'
 
 const App = () => {
     const router = createBrowserRouter(
@@ -21,7 +21,7 @@ const App = () => {
                 <Route path='/uber' element= {<UberUnsPage/>}/>
                 <Route path='/kontakt' element= {<ContactPage/>}/>
                 <Route path='/Produkt' element= {<ProductPage/>}/>
-                <Route path='/Produkt/:id' element= {<ItemPage/>} />
+                <Route path='/Produkt/:id' element= {<ItemPage/>} loader={itemLoader}/>
            </Route>
         )
     )
