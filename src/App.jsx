@@ -12,8 +12,10 @@ import UberUnsPage from './pages/UberUnsPage'
 import ContactPage from './components/Contact'
 import ProductPage from './pages/ProductPage'
 import ItemPage , {itemLoader} from './pages/ItemPage'
+import CommentsPage , {CommentsLoader} from './pages/CommentsPage'
 
 const App = () => {
+
     const router = createBrowserRouter(
         createRoutesFromElements(
            <Route path='/' element= {<MainLayout/>}>
@@ -22,6 +24,7 @@ const App = () => {
                 <Route path='/kontakt' element= {<ContactPage/>}/>
                 <Route path='/Produkt' element= {<ProductPage/>}/>
                 <Route path='/Produkt/:id' element= {<ItemPage/>} loader={itemLoader}/>
+                <Route path='/Kommentar' element= {<CommentsPage/> }  loader={CommentsLoader} />
            </Route>
         )
     )

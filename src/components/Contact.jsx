@@ -101,7 +101,7 @@ const Contact = () => {
                 settingInputPost('')
                 settingInputText('')
                 try {
-                    const response = await fetch('http://localhost:3000/send' , {
+                    const response = await fetch('/api/send' , {
                         method: 'POST',
                         headers: {'content-type' : 'application/json'},
                         body:JSON.stringify(userDataObject),

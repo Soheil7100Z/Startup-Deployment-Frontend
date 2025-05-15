@@ -26,7 +26,8 @@ const Navar = () => {
                             <NavLink to="/">Home</NavLink><hr />
                             <NavLink to="/Produkt">Usere Produkte</NavLink><hr />
                             <NavLink to="/uber">Über uns</NavLink><hr />
-                            <NavLink to="/kontakt">Kontakt</NavLink>
+                            <NavLink to="/kontakt">Kontakt</NavLink> <hr />
+                            <NavLink to="/Kommentar">Kommentar</NavLink>
                         </div>
                  </div>
 
