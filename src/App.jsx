@@ -15,6 +15,15 @@ import ItemPage , {itemLoader} from './pages/ItemPage'
 import CommentsPage , {CommentsLoader} from './pages/CommentsPage'
 
 const App = () => {
+     const commentadding = async (newcomment) => {
+      // console.log(newcomment)
+      const res = await fetch('/api/comments-add' , {
+          method: 'POST',
+          headers: {'content-type' : 'application/json'},
+          body: JSON.stringify(newcomment),
+      });
+      return
+    }
 
     const router = createBrowserRouter(
         createRoutesFromElements(
@@ -24,7 +33,7 @@ const App = () => {
                 <Route path='/kontakt' element= {<ContactPage/>}/>
                 <Route path='/Produkt' element= {<ProductPage/>}/>
                 <Route path='/Produkt/:id' element= {<ItemPage/>} loader={itemLoader}/>
-                <Route path='/Kommentar' element= {<CommentsPage/> }  loader={CommentsLoader} />
+                <Route path='/Kommentar' element= {<CommentsPage addcomment={commentadding}/> }  loader={CommentsLoader} />
            </Route>
         )
     )

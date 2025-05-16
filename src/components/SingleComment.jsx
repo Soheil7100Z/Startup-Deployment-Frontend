@@ -5,11 +5,8 @@ function SingleComment({comment}) {
   return (
     <>
       <br />
-      <br />
-      <br />
-      <div>Number of Comment: {comment.id}</div>
-      
 
+      <div>Name:{comment.name}</div>
       <div>{comment.title}</div>
     </>
 
