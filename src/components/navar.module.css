@@ -54,8 +54,6 @@
     display: grid;
     gap: .8rem;
     position: absolute;
-    top: 4.5rem;
-    left: 2rem;
     padding: .5rem 0;
     color: #192a56;
     font-weight: bold;

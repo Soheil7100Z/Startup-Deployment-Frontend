@@ -4,7 +4,8 @@ import { FaWhatsappSquare, FaInstagramSquare ,FaFacebookSquare  } from 'react-ic
 
 function UberUns() {
   return (
-    <div className={styles.container}>
+
+      <div className={styles.container}>
         <p style={{marginBottom: '2rem'}}>
         Dies ist ein Beispieltext, der als Platzhalter dient. Er soll demonstrieren, wie später Inhalte auf dieser Seite aussehen könnten. Texte wie dieser werden verwendet, um Layouts zu füllen und dem Betrachter einen Eindruck vom fertigen Design zu vermitteln.
 Dabei ist es wichtig, dass der Text möglichst realistisch wirkt, ohne jedoch konkrete Informationen zu liefern. Auf diese Weise können Designer und Entwickler sich ganz auf das visuelle Erscheinungsbild konzentrieren.
@@ -25,6 +26,7 @@ In einem echten Projekt würden hier natürlich relevante Inhalte stehen, die sp
         </div>
 
     </div>
+ 
   )
 }
 
