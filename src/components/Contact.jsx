@@ -100,7 +100,7 @@ const Contact = () => {
                 settingInputPost('')
                 settingInputText('')
                 try {
-                    const response = await fetch('/api/send' , {
+                    const response = await fetch(`${import.meta.env.VITE_API_BASE_URL}/send` , {
                         method: 'POST',
                         headers: {'content-type' : 'application/json'},
                         body:JSON.stringify(userDataObject),

@@ -3,7 +3,7 @@ function SingleComment({comment}) {
   const delComment = async () => {
     console.log(" delComment function called");
       try {
-        const res = await fetch('/api/comments-delete' , {
+        const res = await fetch(`${import.meta.env.VITE_API_BASE_URL}/comments-delete` , {
         method: 'POST',
         headers: {'content-type' : 'application/json'},
         body: JSON.stringify(comment),

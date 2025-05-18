@@ -51,7 +51,7 @@ const CommentsPage = ({addcomment}) => {
 }
 
 const CommentsLoader = async () => {
-  const res = await fetch('/api/comments')
+  const res = await fetch(`${import.meta.env.VITE_API_BASE_URL}/comments`)
   const data = await res.json()
   return data
 }
