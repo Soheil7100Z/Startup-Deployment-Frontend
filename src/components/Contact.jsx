@@ -1,5 +1,4 @@
 import { useRef , useState } from 'react'
-import styles from './contact.module.css'
 import {FaRegPaperPlane} from 'react-icons/fa'
 
 const Contact = () => {
@@ -144,59 +143,65 @@ const Contact = () => {
 
 
   return (
-    <form id={styles.container} method="POST" action="send" onSubmit={submitData} >
-        <span style={{display: 'block', marginBottom: '2rem' }}>Sie haben eine Frage? Dann schreiben Sie uns! Wir bemühen uns Ihr Anliegen zu bearbeiten und setzen uns schnellstmöglich mit Ihnen in Verbindung.</span>
-        <span  style={{display: 'block', marginBottom: '2rem', fontWeight: 'bold', fontSize:'var(--text-lg)' }}>Persönliche Angaben</span>
-        <div className={styles.form}>
-            <div className={styles.perosnInfo}>
+    <form className='container' method="POST" action="send" onSubmit={submitData} >
+        <p className='mb-2' >Sie haben eine Frage? Dann schreiben Sie uns! Wir bemühen uns Ihr Anliegen zu bearbeiten und setzen uns schnellstmöglich mit Ihnen in Verbindung.</p>
+        <p className='mb-2 fontW-b fontS-xl'>Persönliche Angaben</p>
+        <div className='d-grid gridTC-2-1fr gap-1-15'>
+            <div className='d-flex alignItem-c justifyContent-sb '>
                 <label>Anrede:</label>
-                <select className={styles.selectionIcon} value={(inputAnrede)} onChange={currentInputAnrede} >
-                        <option>Herr</option>
-                        <option>Frau</option>
-                        <option>Dr.</option>
-                        <option>Andere</option>
-                </select>
+                    <select className='d-flex w-10 w-15 p-1 borderR-05 outline-none border' value={(inputAnrede)} onChange={currentInputAnrede} >
+                            <option>Herr</option>
+                            <option>Frau</option>
+                            <option>Dr.</option>
+                            <option>Andere</option>
+                    </select>
             </div>
 
-            <div className={styles.perosnInfo}>
+            <div className='d-flex alignItem-c justifyContent-sb'>
                 <label style={{color: errorVor ? '#EA2027' : ''}}>Vorname*:</label>
-                <input type="text" name="Vorname"  value={inputVor} onChange={currentInputVor}  style={{borderColor: errorVor ? '#EA2027' : ''}}/>
+                <input className='d-flex w-10 w-15 p-1 borderR-05 outline-none border'
+                type="text" name="Vorname"  value={inputVor} onChange={currentInputVor}  style={{borderColor: errorVor ? '#EA2027' : ''}}/>
             </div>
 
-            <div className={styles.perosnInfo}>
+            <div className='d-flex alignItem-c justifyContent-sb'>
                 <label style={{color: errorNach ? '#EA2027' : ''}}>Nachname*:</label>
-                <input type="text" name="Nachname"   value={inputNach} onChange={currentInputNach}  style={{borderColor: errorNach ? '#EA2027' : ''}}/>
+                <input className='d-flex w-10 w-15 p-1 borderR-05 outline-none border'
+                type="text" name="Nachname"   value={inputNach} onChange={currentInputNach}  style={{borderColor: errorNach ? '#EA2027' : ''}}/>
             </div>
 
-            <div className={styles.perosnInfo}>
+            <div className='d-flex alignItem-c justifyContent-sb'>
                 <label style={{color: (errorEmail || errorValidationEmail) ? '#EA2027' : ''}}>E-Mail*:</label>
-                <input  type="Email" name="UserEmail"  ref={inputEmailRef}
+                <input className='d-flex w-10 w-15 p-1 borderR-05 outline-none border'
+                type="Email" name="UserEmail"  ref={inputEmailRef}
                 value={inputEmail} onChange={currentInputEmail}
                 style={{borderColor: (errorEmail || errorValidationEmail) ? '#EA2027' : ''}}/>
             </div>
 
-            <div className={styles.perosnInfo}>
+            <div className='d-flex alignItem-c justifyContent-sb'>
                 <label>Telefonnummer:</label>
-                <input type="number" name="Telefonnummer" value={inputTel} onChange={currentInputTel}/>
+                <input className='d-flex w-10 w-15 p-1 borderR-05 outline-none border'
+                type="number" name="Telefonnummer" value={inputTel} onChange={currentInputTel}/>
             </div>
 
-            <div className={styles.perosnInfo}>
+            <div className='d-flex alignItem-c justifyContent-sb'>
                 <label>Postleitzahl:</label>
-                <input type="number" name="Postleitzahl" value={inputPost} onChange={currentInputPost} />
+                <input className='d-flex w-10 w-15 p-1 borderR-05 outline-none border'
+                type="number" name="Postleitzahl" value={inputPost} onChange={currentInputPost} />
             </div>
         </div>
-        {errorText && <div style={{marginBottom: '-3rem', marginTop: '2rem', color: '#EA2027', fontSize: '2rem' }}>*</div>}
-        <textarea name="message" rows="5" className={styles.textArea} placeholder='Bitte schreiben Sie Ihre Anfrage'
+        {errorText && <div className='mb-minus3 mt-2 fontC-r fontS-xl'>*</div>}
+        <textarea name="message" rows="5" className='d-flex w-100p mt-2 mb-2 resize-none p-1 borderR-05 fontS-md border outline-none fontF-inherit'
+        placeholder='Bitte schreiben Sie Ihre Anfrage'
         value={inputText} onChange={currentInputText}
         style={{borderColor: errorText ? '#EA2027' : ''}}
           ></textarea>
 
-        {errorValidationEmail && <div style={{ color: '#EA2027', fontSize:'1.3rem'}}>Bitte geben Sie eine gültige E-Mail ein !</div>}
-        {(errorVor||errorNach||errorEmail||errorText) && <div style={{color: '#EA2027', fontSize:'1.3rem', marginTop:'1rem'}}>Bitte füllen Sie die * aus, sie sind die Pflichtangaben !</div>}
-        {messageSent && <div style={{ color: '#192a56', fontSize:'1.5rem', fontWeight: 'bold'}}> {messageSent} </div>}
-        {messageNotSent && <div style={{ color: '#EA2027', fontSize:'1.5rem', fontWeight: 'bold'}}> {messageNotSent} </div>}
-        <button type="submit" onClick={Beforesubmission} className={styles.button}>
-            <FaRegPaperPlane  style={{ marginRight: '.8rem'}} />
+        {errorValidationEmail && <div className='fontS-md fontC-r'>Bitte geben Sie eine gültige E-Mail ein !</div>}
+        {(errorVor||errorNach||errorEmail||errorText) && <div className='fontS-md fontC-r mt-1'>Bitte füllen Sie die * aus, sie sind die Pflichtangaben !</div>}
+        {messageSent && <div className='fontC-b fontS-lg fontW-b'> {messageSent} </div>}
+        {messageNotSent && <div className='fontC-r fontS-lg fontW-b'> {messageNotSent} </div>}
+        <button type="submit" onClick={Beforesubmission} className='mt-2 p-1 fontW-b fontS-md fontC-w bg-blue border-none borderR-05 hover '>
+            <FaRegPaperPlane className='mr-1' />
             SENDEN</button>
 
     </form>

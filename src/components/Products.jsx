@@ -1,5 +1,4 @@
 import {useState , useEffect} from 'react';
-import styles from './products.module.css'
 import Product from './Product'
 
 
@@ -18,12 +17,10 @@ function Products() {
     productsFetch()
   } ,[])
   return (
-    <div id={styles.container}>
-
+    <div className='d-grid gridTC-2-1fr gap-2 mlr-105 mt-2'>
         {ProductList.map((item , id)=>(
             <Product key={id} item = {item} />
         ))}
-
     </div>
   )
 }

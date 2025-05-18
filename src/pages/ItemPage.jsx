@@ -1,26 +1,22 @@
-import styles from './itemPage.module.css'
-import { useParams ,useLoaderData } from 'react-router-dom'
-// import { useState , useEffect } from 'react'
+import {useLoaderData } from 'react-router-dom'
 
 function ItemPage() {
 
   const ProductList = useLoaderData()
   return (
      <>
-      <section >
-        <article>
-          <h1>{ProductList.title}</h1>
+      <section className='d-flex flex-col flex-row-after950 mlr-10 bg-blue'>
+        <article className='d-flex flex-col justifyContent-c alignItem-c w-40p-until950 fontC-w p-1'>
+          <h1 className='fontS-3xl mb-2'>{ProductList.title}</h1>
           <h2>Preis: {ProductList.price}</h2>
         </article>
 
-        <img src={ProductList.img} alt={ProductList.title} />
+        <img className='w-100p w-60p-until950' src={ProductList.img} alt={ProductList.title} />
 
       </section>
-      <div className={styles.des}>
-
+      <p className='bg-blue fontS-md fontC-w p-2 lineH-108 textAlign-j'>
             {ProductList.description}
-
-      </div>
+      </p>
      </>
 )
 
@@ -33,18 +29,3 @@ const itemLoader = async ({params}) => {
 }
 
 export {ItemPage as default , itemLoader};
-
- // const {id} = useParams()
-  // const [ProductList, settingProducts] = useState([])
-  //  useEffect( () => {
-  //     const productsFetch = async () => {
-  //       try {
-  //         const res = await fetch(`/api/products/${id}`)
-  //         const data = await res.json()
-  //         settingProducts(data)
-  //       } catch (error) {
-
-  //       }
-  //     }
-  //     productsFetch()
-  //   } ,[])
