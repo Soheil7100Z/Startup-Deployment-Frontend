@@ -29,11 +29,11 @@ const App = () => {
         createRoutesFromElements(
            <Route path='/' element= {<MainLayout/>}>
                 <Route index element= {<HomePage/>}/>
-                <Route path='/uber' element= {<UberUnsPage/>}/>
-                <Route path='/kontakt' element= {<ContactPage/>}/>
-                <Route path='/Produkt' element= {<ProductPage/>}/>
-                <Route path='/Produkt/:id' element= {<ItemPage/>} loader={itemLoader}/>
-                <Route path='/Kommentar' element= {<CommentsPage addcomment={commentadding}/> }  loader={CommentsLoader} />
+                <Route path='/about' element= {<UberUnsPage/>}/>
+                <Route path='/contact' element= {<ContactPage/>}/>
+                <Route path='/products' element= {<ProductPage/>}/>
+                <Route path='/products/:id' element= {<ItemPage/>} loader={itemLoader}/>
+                <Route path='/comments' element= {<CommentsPage addcomment={commentadding}/> }  loader={CommentsLoader} />
            </Route>
         )
     )

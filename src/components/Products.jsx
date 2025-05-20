@@ -17,7 +17,7 @@ function Products() {
     productsFetch()
   } ,[])
   return (
-    <div className='d-grid gridTC-2-1fr gap-2 mlr-105 mt-2'>
+    <div className='d-grid gridTC-2-1fr gap-2 mlr-105 mt-2 sideBar'>
         {ProductList.map((item , id)=>(
             <Product key={id} item = {item} />
         ))}

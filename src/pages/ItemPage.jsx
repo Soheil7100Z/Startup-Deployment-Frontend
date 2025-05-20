@@ -1,6 +1,10 @@
 import {useLoaderData } from 'react-router-dom'
-
+import { useEffect } from 'react'
 function ItemPage() {
+
+  useEffect(()=>{
+    window.scrollTo(0,0)
+  },[])
 
   const ProductList = useLoaderData()
   return (
@@ -14,7 +18,7 @@ function ItemPage() {
         <img className='w-100p w-60p-until950' src={ProductList.img} alt={ProductList.title} />
 
       </section>
-      <p className='bg-blue fontS-md fontC-w p-2 lineH-108 textAlign-j'>
+      <p className=' fontS-md p-2 p-1-0  lineH-108 textAlign-j mlr-10'>
             {ProductList.description}
       </p>
      </>

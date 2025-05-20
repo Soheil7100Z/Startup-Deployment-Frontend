@@ -8,7 +8,7 @@ const Navar = () => {
     const [menu , menuActivating] = useState(true)
 
   return (
-    <div className='container d-flex justifyContent-sb alignItem-c bg-blue'>
+    <div className='container d-flex justifyContent-sb alignItem-c bg-blue position-sticky-top0'>
 
             <div  onClick={() => menuActivating((preState) => !preState) }>
                 {menu ?
@@ -26,10 +26,10 @@ const Navar = () => {
                         </div>
                         <div className='bg-w d-grid gap-1 position-ab p-05-0' onMouseLeave={() => menuActivating(true)}>
                             <NavLink className='textDeco-none fontW-b underLine fontC-b p-05-1' to="/">Home</NavLink><hr />
-                            <NavLink className='textDeco-none fontW-b underLine fontC-b p-05-1' to="/Produkt">Usere Produkte</NavLink><hr />
-                            <NavLink className='textDeco-none fontW-b underLine fontC-b p-05-1' to="/uber">Über uns</NavLink><hr />
-                            <NavLink className='textDeco-none fontW-b underLine fontC-b p-05-1' to="/kontakt">Kontakt</NavLink> <hr />
-                            <NavLink className='textDeco-none fontW-b underLine fontC-b p-05-1' to="/Kommentar">Kommentar</NavLink>
+                            <NavLink className='textDeco-none fontW-b underLine fontC-b p-05-1' to="/products">Usere Produkte</NavLink><hr />
+                            <NavLink className='textDeco-none fontW-b underLine fontC-b p-05-1' to="/about">Über uns</NavLink><hr />
+                            <NavLink className='textDeco-none fontW-b underLine fontC-b p-05-1' to="/contact">Kontakt</NavLink> <hr />
+                            <NavLink className='textDeco-none fontW-b underLine fontC-b p-05-1' to="/comments">Kommentar</NavLink>
                         </div>
                  </div>
 
@@ -43,9 +43,9 @@ const Navar = () => {
             </div>
             <div className='d-flex gap-1 fontW-b'>
               <div>
-                  <NavLink to="/kontakt" className='d-flex alignItem-c textDeco-none fontC-w fontS-lg underLine '>
-                  <span className='d-none d-flex-after550'>Kontakt</span>
-                  <IoMdContact className='fontS-xl ml-05'/>
+                  <NavLink to="/contact" className='d-flex alignItem-c textDeco-none fontC-w fontS-lg underLine '>
+                  <span className='d-none d-flex-after550'></span>
+                  <IoMdContact className='fontS-2xl ml-05'/>
                   </NavLink>
               </div>
 

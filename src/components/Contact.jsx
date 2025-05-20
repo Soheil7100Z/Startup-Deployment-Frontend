@@ -143,7 +143,7 @@ const Contact = () => {
 
 
   return (
-    <form className='container' method="POST" action="send" onSubmit={submitData} >
+    <form className='container sideBar' method="POST" action="send" onSubmit={submitData} >
         <p className='mb-2' >Sie haben eine Frage? Dann schreiben Sie uns! Wir bemühen uns Ihr Anliegen zu bearbeiten und setzen uns schnellstmöglich mit Ihnen in Verbindung.</p>
         <p className='mb-2 fontW-b fontS-xl'>Persönliche Angaben</p>
         <div className='d-grid gridTC-2-1fr gap-1-15'>

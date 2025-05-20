@@ -11,7 +11,7 @@ function Product({item}) {
 
   return (
 
-        <div className='d-flex flex-col justifyContent-sb gap-3 p-2 bg-w borderR-1 boxShadow'>
+        <div className=' mb-2remForProducts d-flex flex-col justifyContent-sb gap-3 p-2 bg-w borderR-1 boxShadow'>
             <div>
                 <div className='w-100p minH-25 minH-10 bgS-cover bgR-no bgP-center mb-2' style={{backgroundImage: `url(${item.img})`}}></div>
                 <div className='fontS-md'>

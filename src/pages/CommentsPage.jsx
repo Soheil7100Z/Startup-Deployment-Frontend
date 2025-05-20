@@ -1,11 +1,15 @@
 import { useLoaderData } from "react-router-dom"
 import SingleComment from "../components/SingleComment"
-import { useState } from "react"
+import { useState , useEffect } from "react"
 
 const CommentsPage = ({addcomment}) => {
   const comments = useLoaderData()
   const [name , settingName] = useState('')
   const [comment, settingComment] = useState('')
+
+  useEffect(()=>{
+      window.scrollTo(0,0)
+    },[])
 
     let lastCommentID = parseInt(comments[comments.length-1].id)
       const commentSubmit = (e) => {
@@ -22,7 +26,7 @@ const CommentsPage = ({addcomment}) => {
 
 
   return (
-    <div className="container">
+    <div className="container sideBar">
       <p className="mb-2 fontW-b">Sie können hier Ihren Kommentar hinzufügen oder entfernen.</p>
       <form onSubmit={commentSubmit} >
         <div className="d-flex flex-col gap-1">
