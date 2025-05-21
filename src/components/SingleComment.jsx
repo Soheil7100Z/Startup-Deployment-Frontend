@@ -1,23 +1,19 @@
 function SingleComment({comment}) {
 
   const delComment = async () => {
-    console.log(" delComment function called");
       try {
         const res = await fetch(`${import.meta.env.VITE_API_BASE_URL}/comments-delete` , {
         method: 'POST',
         headers: {'content-type' : 'application/json'},
         body: JSON.stringify(comment),
       })
-
-      }catch (error) {
+         if(res.ok) {
+            window.location.reload();
+      }
+    }
+      catch (error) {
         console.error('there is an error:', error)
       }
-  }
-
-  const relaoding  = () =>  {
-    setTimeout(() => {
-       window.location.reload();
-    }, 50);
   }
 
   return (

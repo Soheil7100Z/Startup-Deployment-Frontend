@@ -3,7 +3,7 @@ import { NavLink } from "react-router-dom"
 function Footer() {
   return (
     <div >
-       <div className='container textAlign-c fontC-w bg-blue fontS-lg'>
+       <div className='container textAlign-c fontC-w bg-blue fontS-md'>
           <p>Erstellt von soheil Zaremehrjardi mit React und Node.js</p>
           <p>Sie finden mehr Projekte unter meinem Github</p>
           <NavLink to="https://github.com/Soheil7100Z?tab=repositories" target='_blank'>
