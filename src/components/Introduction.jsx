@@ -8,7 +8,7 @@ const Introduction = () => {
         ohne vom Inhalt abzulenken. Solche Blindtexte helfen dabei, Struktur und Gestaltung einer Website oder eines Dokuments
         besser beurteilen zu können.
         </p>
-        <NavLink to='./products' className='textDeco-none fontW-b fontC-w bg-blue p-05-1 borderR-05 mt-2 hover'>
+        <NavLink to='./products' className='textDeco-none fontW-b fontC-w bg-blue p-1 borderR-05 mt-2 hover'>
             Produkte
         </NavLink>
     </div>

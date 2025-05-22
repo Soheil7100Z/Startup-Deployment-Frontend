@@ -5,7 +5,7 @@ input[type=number] {-moz-appearance: textfield;}
 html {font-family: Arial, Helvetica, sans-serif; overflow-y: scroll; max-width: 2000px; margin: 0 auto;}
 .container  { padding: 1rem 1.5rem; font-size: 1.2rem; color: #192a56;}
 
-.minh-home { min-height: calc(100vh - 229.8px);}
+.minh-home { min-height: calc(100vh - 14.36rem);}
 .minh-100vh { min-height: 100vh;}
 .layout > div:first-child {flex: 1;}
 .mb-2remForProducts {margin-bottom: 2rem;}
@@ -30,7 +30,7 @@ html {font-family: Arial, Helvetica, sans-serif; overflow-y: scroll; max-width: 
 @media (min-width: 650px) {.d-flex-after550 {display: flex ;}}
 
 .gap-1-15 { gap: 1rem 10rem;}
-.gap-5px {gap: 5px;}
+.gap-5px {gap: 0.3rem;}
 .gap-05 {gap: 0.5rem;}
 .gap-1 {gap: 1rem;}
 .gap-2 {gap: 2rem;}
@@ -39,6 +39,7 @@ html {font-family: Arial, Helvetica, sans-serif; overflow-y: scroll; max-width: 
 .mlr-105 {margin: 0 1.5rem;}
 .mt-1 {margin-top: 1rem;}
 .mt-2 {margin-top: 2rem;}
+.mt-10 {margin-top: 10rem;}
 .mb-minus3 {margin-bottom: -3rem;}
 .mb-05 {margin-bottom: 0.5rem;}
 .mb-1 {margin-bottom: 1rem;}
@@ -58,7 +59,8 @@ html {font-family: Arial, Helvetica, sans-serif; overflow-y: scroll; max-width: 
 .p-0-3 {padding: 0 3rem;}
 @media (min-width: 950px) {.p-1-0 {padding: 1rem 0;}}
 
-.w-35px {width: 35px;}
+.w-hSpinner {width: 8rem !important; height: 8rem !important;}
+.w-35px {width: 2.2rem;}
 .w-10 {width: 10rem}
 .w-100p {width: 100%;}
 .minH-10 {min-height: 10rem;}
@@ -73,9 +75,10 @@ html {font-family: Arial, Helvetica, sans-serif; overflow-y: scroll; max-width: 
   .w-15 {width: 15rem}}
 
 .minH-5 {min-height: 5rem;}
-.h-3px {height: 3px;}
+.h-3px {height: 0.2rem;}
 
 .border {border: 2px solid #192a56;}
+.borderR-03 {border-radius: 0.3rem;}
 .borderR-05 {border-radius: 0.5rem;}
 .borderR-1 {border-radius: 1rem;}
 .border-none {border: none;}

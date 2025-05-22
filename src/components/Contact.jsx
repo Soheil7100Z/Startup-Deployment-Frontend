@@ -1,7 +1,9 @@
 import { useRef , useState } from 'react'
 import {FaRegPaperPlane} from 'react-icons/fa'
+import { ClipLoader } from 'react-spinners'
 
 const Contact = () => {
+    const [laoder , settingLaoder] = useState(true)
 
     const [inputVor , settingInputVor] = useState('')
     const [inputNach , settingInputNach] = useState('')
@@ -64,6 +66,7 @@ const Contact = () => {
 
 
     const submitData = async(e) => {
+      settingLaoder(false)
         e.preventDefault()
         if (!inputVor){
             settingErrorVor('required')
@@ -106,12 +109,16 @@ const Contact = () => {
                         body:JSON.stringify(userDataObject),
                     })
                     const UserInfo = await response.json()
+
+                      if(UserInfo) {settingLaoder(true)}
+
                     settingmessageSent('Vielen Dank! Ihre Anfrage wurde erfolgreich übermittelt. Unser Team wird sich zeitnah bei Ihnen melden.')
-                    console.log(UserInfo)
-                }
-                catch (error) {
-                    settingmessageNotSent('Ein technischer Fehler ist aufgetreten. Bitte versuchen Sie es später erneut. Wir bitten um Entschuldigung und danken für Ihr Verständnis.')
-                  }
+
+                    }
+                    catch (error) {
+                        settingLaoder(true)
+                        settingmessageNotSent('Ein technischer Fehler ist aufgetreten. Bitte versuchen Sie es später erneut. Wir bitten um Entschuldigung und danken für Ihr Verständnis.')
+                      }
         }
 }
 
@@ -198,8 +205,9 @@ const Contact = () => {
 
         {errorValidationEmail && <div className='fontS-md fontC-r'>Bitte geben Sie eine gültige E-Mail ein !</div>}
         {(errorVor||errorNach||errorEmail||errorText) && <div className='fontS-md fontC-r mt-1'>Bitte füllen Sie die * aus, sie sind die Pflichtangaben !</div>}
-        {messageSent && <div className='fontC-b fontS-lg fontW-b'> {messageSent} </div>}
-        {messageNotSent && <div className='fontC-r fontS-lg fontW-b'> {messageNotSent} </div>}
+        {!laoder ?<div className='d-block'><ClipLoader /></div>  : ''}
+        {messageSent &&  <div className='fontC-b fontS-lg fontW-b'> {messageSent} </div>}
+        { messageNotSent && <div className='fontC-r fontS-lg fontW-b'> {messageNotSent} </div>}
         <button type="submit" onClick={Beforesubmission} className='mt-2 p-1 fontW-b fontS-md fontC-w bg-blue border-none borderR-05 hover '>
             <FaRegPaperPlane className='mr-1' />
             SENDEN</button>

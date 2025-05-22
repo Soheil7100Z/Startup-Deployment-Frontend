@@ -24,7 +24,7 @@ const Navar = () => {
                             <span className='w-35px h-3px bg-w'></span>
                             <span className='w-35px h-3px bg-w'></span>
                         </div>
-                        <div className='bg-w d-grid gap-1 position-ab p-05-0' onMouseLeave={() => menuActivating(true)}>
+                        <div className='bg-w d-grid gap-1 position-ab p-05-0 borderR-03' onMouseLeave={() => menuActivating(true)}>
                             <NavLink className='textDeco-none fontW-b underLine fontC-b p-05-1' to="/">Home</NavLink><hr />
                             <NavLink className='textDeco-none fontW-b underLine fontC-b p-05-1' to="/products">Usere Produkte</NavLink><hr />
                             <NavLink className='textDeco-none fontW-b underLine fontC-b p-05-1' to="/about">Über uns</NavLink><hr />
@@ -38,7 +38,7 @@ const Navar = () => {
             </div>
 
             <div className=' d-flex alignItem-c fontS-lg fontW-b fontC-w '>
-              <div className='fontS-xl d-flex p-1'><FaReact/></div>
+              <NavLink><div className='fontS-xl fontC-w d-flex p-1 textDeco-none'><FaReact/></div></NavLink>
               <span className='d-none d-flex-after550'>Soheil Zaremehrjardi</span>
             </div>
             <div className='d-flex gap-1 fontW-b'>

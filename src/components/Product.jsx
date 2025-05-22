@@ -13,7 +13,7 @@ function Product({item}) {
 
         <div className=' mb-2remForProducts d-flex flex-col justifyContent-sb gap-3 p-2 bg-w borderR-1 boxShadow'>
             <div>
-                <div className='w-100p minH-25 minH-10 bgS-cover bgR-no bgP-center mb-2' style={{backgroundImage: `url(${item.img})`}}></div>
+                <div className='w-100p minH-25 minH-10 bgS-cover bgR-no bgP-center mb-2 borderR-03' style={{backgroundImage: `url(${item.img})`}}></div>
                 <div className='fontS-md'>
                     <div className='fontS-2xl fontW-b mb-1'>{item.title}</div>
                     <div className='mb-05 fontS-n'> {description} </div>
