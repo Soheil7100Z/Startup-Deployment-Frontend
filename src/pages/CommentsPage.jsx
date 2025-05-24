@@ -1,4 +1,4 @@
-import { useLoaderData } from "react-router-dom"
+import { useLoaderData , useNavigate } from "react-router-dom"
 import SingleComment from "../components/SingleComment"
 import { useState , useEffect } from "react"
 import { ClipLoader } from "react-spinners"
@@ -8,10 +8,15 @@ const CommentsPage = ({addcomment}) => {
   const [laoder , settingLaoder] = useState(true)
   const [name , settingName] = useState('')
   const [comment, settingComment] = useState('')
+  const navigate = useNavigate()
 
 
   useEffect(()=>{
       if(comments) {settingLaoder(false)}
+      else {
+        alert('Wer are experiencing server issues. Please try again later.')
+        navigate('/')
+      }
   },[comments])
 
   useEffect(()=>{
@@ -19,6 +24,7 @@ const CommentsPage = ({addcomment}) => {
     },[])
 
     let lastCommentID = parseInt(comments[comments.length-1].id)
+
       const commentSubmit = (e) => {
         e.preventDefault();
         const ID = String(lastCommentID +1)
@@ -28,7 +34,13 @@ const CommentsPage = ({addcomment}) => {
           title: comment
         }
         addcomment(newComment)
-        window.location.reload()
+         setTimeout(() => {
+           if(comments) {window.location.reload()}
+           else {
+             alert('Wer are experiencing server issues. Please try again later.')
+             navigate('/')
+                }
+        }, 300);
       }
 
 

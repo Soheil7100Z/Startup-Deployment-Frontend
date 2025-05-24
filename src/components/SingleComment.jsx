@@ -9,7 +9,10 @@ function SingleComment({comment}) {
       })
          if(res.ok) {
             window.location.reload();
-      }
+        }else {
+          alert('Wer are experiencing server issues. Please try again later.')
+          navigate('/')
+        }
     }
       catch (error) {
         console.error('there is an error:', error)

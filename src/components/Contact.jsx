@@ -66,7 +66,7 @@ const Contact = () => {
 
 
     const submitData = async(e) => {
-      settingLaoder(false)
+
         e.preventDefault()
         if (!inputVor){
             settingErrorVor('required')
@@ -92,6 +92,7 @@ const Contact = () => {
         }
 
         if (inputVor && inputNach && inputEmail && inputText){
+                settingLaoder(false)
                 let userData = [];
                 let keys = ["anrede","vorname" , "nachname" , "email" , "telefonnummer" , "postleitzahl", "message"]
                 userData.push(inputAnrede,inputVor,inputNach,inputEmail,inputTel,inputPost,inputText)
