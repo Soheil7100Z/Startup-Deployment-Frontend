@@ -2,28 +2,20 @@ import { NavLink } from 'react-router-dom'
 import {FaReact} from 'react-icons/fa'
 import {IoMdContact } from 'react-icons/io'
 import { useState } from 'react'
-
+import { VscMenu } from "react-icons/vsc";
 const Navar = () => {
 
     const [menu , menuActivating] = useState(true)
 
   return (
-    <div className='container d-flex justifyContent-sb alignItem-c bg-blue position-sticky-top0'>
+    <div className='container d-flex justifyContent-sb alignItem-c bg-blue position-sticky-top0 zIndex-999'>
 
             <div  onClick={() => menuActivating((preState) => !preState) }>
                 {menu ?
-                <div className='d-flex flex-col gap-5px mb-05 hover'>
-                            <span className='w-35px h-3px bg-w'></span>
-                            <span className='w-35px h-3px bg-w'></span>
-                            <span className='w-35px h-3px bg-w'></span>
-                </div>
-                    :
+                        <VscMenu className='fontC-w fontS-2xl hover'/>
+                      :
                  <div>
-                        <div className='d-flex flex-col gap-5px mb-05 hover'>
-                            <span className='w-35px h-3px bg-w'></span>
-                            <span className='w-35px h-3px bg-w'></span>
-                            <span className='w-35px h-3px bg-w'></span>
-                        </div>
+                        <VscMenu className='fontC-w fontS-2xl hover'/>
                         <div className='bg-w d-grid gap-1 position-ab p-05-0 borderR-03' onMouseLeave={() => menuActivating(true)}>
                             <NavLink className='textDeco-none fontW-b underLine fontC-b p-05-1' to="/">Home</NavLink><hr />
                             <NavLink className='textDeco-none fontW-b underLine fontC-b p-05-1' to="/products">Usere Produkte</NavLink><hr />

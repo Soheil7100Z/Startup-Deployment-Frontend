@@ -166,19 +166,19 @@ const Contact = () => {
             </div>
 
             <div className='d-flex alignItem-c justifyContent-sb'>
-                <label style={{color: errorVor ? '#EA2027' : ''}}>Vorname*:</label>
+                <label style={{color: errorVor ? '#EA2027' : ''}}>Vorname:</label>
                 <input className='d-flex w-10 w-15 p-1 borderR-05 outline-none border'
                 type="text" name="Vorname"  value={inputVor} onChange={currentInputVor}  style={{borderColor: errorVor ? '#EA2027' : ''}}/>
             </div>
 
             <div className='d-flex alignItem-c justifyContent-sb'>
-                <label style={{color: errorNach ? '#EA2027' : ''}}>Nachname*:</label>
+                <label style={{color: errorNach ? '#EA2027' : ''}}>Nachname:</label>
                 <input className='d-flex w-10 w-15 p-1 borderR-05 outline-none border'
                 type="text" name="Nachname"   value={inputNach} onChange={currentInputNach}  style={{borderColor: errorNach ? '#EA2027' : ''}}/>
             </div>
 
             <div className='d-flex alignItem-c justifyContent-sb'>
-                <label style={{color: (errorEmail || errorValidationEmail) ? '#EA2027' : ''}}>E-Mail*:</label>
+                <label style={{color: (errorEmail || errorValidationEmail) ? '#EA2027' : ''}}>E-Mail:</label>
                 <input className='d-flex w-10 w-15 p-1 borderR-05 outline-none border'
                 type="Email" name="UserEmail"  ref={inputEmailRef}
                 value={inputEmail} onChange={currentInputEmail}
@@ -197,21 +197,23 @@ const Contact = () => {
                 type="number" name="Postleitzahl" value={inputPost} onChange={currentInputPost} />
             </div>
         </div>
-        {errorText && <div className='mb-minus3 mt-2 fontC-r fontS-xl'>*</div>}
+
         <textarea name="message" rows="5" className='d-flex w-100p mt-2 mb-2 resize-none p-1 borderR-05 fontS-md border outline-none fontF-inherit'
         placeholder='Bitte schreiben Sie Ihre Anfrage'
         value={inputText} onChange={currentInputText}
         style={{borderColor: errorText ? '#EA2027' : ''}}
           ></textarea>
 
-        {errorValidationEmail && <div className='fontS-md fontC-r'>Bitte geben Sie eine gültige E-Mail ein !</div>}
-        {(errorVor||errorNach||errorEmail||errorText) && <div className='fontS-md fontC-r mt-1'>Bitte füllen Sie die * aus, sie sind die Pflichtangaben !</div>}
-        {!laoder ?<div className='d-block'><ClipLoader /></div>  : ''}
-        {messageSent &&  <div className='fontC-b fontS-lg fontW-b'> {messageSent} </div>}
-        { messageNotSent && <div className='fontC-r fontS-lg fontW-b'> {messageNotSent} </div>}
-        <button type="submit" onClick={Beforesubmission} className='mt-2 p-1 fontW-b fontS-md fontC-w bg-blue border-none borderR-05 hover '>
+        <button type="submit" onClick={Beforesubmission} className='mb-05 p-1 fontW-b fontS-md fontC-w bg-blue border-none borderR-05 hover '>
             <FaRegPaperPlane className='mr-1' />
-            SENDEN</button>
+            SENDEN
+        </button>
+        {(errorVor||errorNach||errorEmail||errorText) && <div className='fontS-md fontW-b fontC-r mt-1'>Bitte füllen Sie Pflichtangaben aus!</div>}
+        {errorValidationEmail && <div className='fontS-md fontW-b fontC-r mt-1'>Bitte geben Sie eine gültige E-Mail ein !</div>}
+        {!laoder ?<div className='d-block mt-1'><ClipLoader /></div>  : ''}
+        {messageSent &&  <div className='fontC-b fontS-md fontW-b mt-1'> {messageSent} </div>}
+        { messageNotSent && <div className='fontC-r fontS-md fontW-b mt-1'> {messageNotSent} </div>}
+
 
     </form>
   )

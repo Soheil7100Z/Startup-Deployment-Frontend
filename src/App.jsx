@@ -16,7 +16,6 @@ import CommentsPage , {CommentsLoader} from './pages/CommentsPage'
 
 const App = () => {
      const commentadding = async (newcomment) => {
-      // console.log(newcomment)
       const res = await fetch(`${import.meta.env.VITE_API_BASE_URL}/comments-add` , {
           method: 'POST',
           headers: {'content-type' : 'application/json'},
