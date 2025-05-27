@@ -1,12 +1,46 @@
-# React + Vite
+# Startup Frontend
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+A React-based frontend for a startup company website. It showcases the company’s products and includes pages for home, products, item for each product, about us, contact, and user comments.
 
-Currently, two official plugins are available:
+## 🌐 Live URL
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+- [Start up on Vercel](https://frontend-startup-henna.vercel.app)
 
-## Expanding the ESLint configuration
+## 🔍 Features
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+- **Pages**: Home, Products, Item, About Us, Comments, Contact
+- **Comments Page**: Add and delete comments (communicates with backend API)
+- **Contact Form**:
+  - Collects: Full Name, Gender, Email, Phone, Postal Code, Message
+  - On success: Shows confirmation and sends confirmation email to the user
+  - On error: Displays user-friendly error messages (without using `alert()`)
+- **UX Enhancements**:
+  - Sticky header
+  - Custom loading spinner (`ClipLoader`)
+  - Clean layout with footer
+
+## 🛠️ Packages Used
+
+- **React** (bootstrapped with Vite)
+- **Custom Utility CSS** (handwritten by myself)
+- **React Router DOM** – page navigation
+- **React Icons** – icons
+- **React Spinners** – loading indicators
+
+## 🔌 API Integration
+
+- Connected to backend hosted on Render
+- Uses `fetch()` with `GET` and `POST` requests to work with products and comments data on the backend
+
+## 📦 Key React Tools
+
+- `useState`, `useEffect`, `useLoaderData`, `useNavigate`
+- Component-based layout for scalability
+
+## 🚀 Run Locally
+
+```bash
+git clone https://github.com/Soheil7100Z/Startup-Frontend.git
+cd Startup-Frontend
+npm install
+npm run dev
