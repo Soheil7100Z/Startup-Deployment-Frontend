@@ -25,7 +25,7 @@ function SingleComment({comment}) {
         <div className="fontW-b">Name: {comment.name}</div>
         <div className="mt-1">{comment.title}</div>
         <button className="mt-1 p-05-1 bg-blue fontC-w fontW-b fontS-n bg-red borderR-05 border-none hover"
-        onClick={() => {delComment(),relaoding()}}>Entfernen</button>
+        onClick={delComment}>Entfernen</button>
       </div>
 
   )
