@@ -1,8 +1,13 @@
 import { useRef , useState } from 'react'
 import {FaRegPaperPlane} from 'react-icons/fa'
 import { ClipLoader } from 'react-spinners'
+import { useEffect } from 'react'
 
 const Contact = () => {
+
+        useEffect(()=>{
+          window.scrollTo(0,0)
+        },[])
     const [laoder , settingLaoder] = useState(true)
 
     const [inputVor , settingInputVor] = useState('')

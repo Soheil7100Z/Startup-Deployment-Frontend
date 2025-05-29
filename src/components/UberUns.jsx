@@ -1,7 +1,11 @@
 import { NavLink } from 'react-router-dom'
 import { FaWhatsappSquare, FaInstagramSquare ,FaFacebookSquare  } from 'react-icons/fa'
+import { useEffect } from 'react'
 
 function UberUns() {
+     useEffect(()=>{
+       window.scrollTo(0,0)
+     },[])
   return (
 
       <div className='wrapper container textAlign-j sideBar'>

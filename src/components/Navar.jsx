@@ -35,9 +35,8 @@ const Navar = () => {
             </div>
             <div className='d-flex gap-1 fontW-b'>
               <div>
-                  <NavLink to="/contact" className='d-flex alignItem-c textDeco-none fontC-w fontS-lg underLine '>
-                  <span className='d-none d-flex-after550'></span>
-                  <IoMdContact className='fontS-2xl ml-05'/>
+                  <NavLink to="/contact" className='d-flex alignItem-c textDeco-none fontC-w fontS-lg underLine'>
+                  <IoMdContact className='fontS-2xl'/>
                   </NavLink>
               </div>
 
