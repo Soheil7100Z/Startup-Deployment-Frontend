@@ -21,10 +21,10 @@ function SingleComment({comment}) {
 
   return (
 
-      <div className="mt-2 ml-2">
+      <div className="mt-2">
         <div className="fontW-b">Name: {comment.name}</div>
         <div className="mt-1">{comment.title}</div>
-        <button className="mt-1 p-05-1 bg-blue fontC-w fontW-b fontS-n bg-red borderR-05 border-none hover"
+        <button className="mt-1 p-05-1 bg-blue fontC-w fontW-b fontS-n bg-red borderR-03 border-none hover"
         onClick={delComment}>Entfernen</button>
       </div>
 

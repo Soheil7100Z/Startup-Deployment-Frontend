@@ -23,7 +23,7 @@ function Product({item}) {
                 </div>
             </div>
             <div className='mt-2'>
-              <NavLink to={`${item.id}`} className='textDeco-none bg-blue fontC-w fontW-b fontS-md borderR-05 p-1 hover'>Mehr Details</NavLink>
+              <NavLink to={`${item.id}`} className='textDeco-none bg-blue fontC-w fontW-b fontS-n borderR-03 p-05 hover'>Mehr Details</NavLink>
             </div>
         </div>
 

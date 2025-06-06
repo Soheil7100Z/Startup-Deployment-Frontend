@@ -156,13 +156,13 @@ const Contact = () => {
 
 
   return (
-    <form className='container sideBar' method="POST" action="send" onSubmit={submitData} >
+    <form className='container sideBar' onSubmit={submitData} >
         <p className='mb-2' >Sie haben eine Frage? Dann schreiben Sie uns! Wir bemühen uns Ihr Anliegen zu bearbeiten und setzen uns schnellstmöglich mit Ihnen in Verbindung.</p>
         <p className='mb-2 fontW-b fontS-xl'>Persönliche Angaben</p>
-        <div className='d-grid gridTC-2-1fr gap-1-15'>
-            <div className='d-flex alignItem-c justifyContent-sb '>
-                <label>Anrede:</label>
-                    <select className='d-flex w-10 w-15 p-1 borderR-05 outline-none border' value={(inputAnrede)} onChange={currentInputAnrede} >
+        <div className='d-grid gridTC-2-1fr-contact gap-1-15'>
+            <div className=' d-inline-Contact d-flex alignItem-c justifyContent-sb '>
+                <label className=''>Anrede:</label>
+                    <select className='mt-Contact-05 d-flex w-10 w-15 p-1 borderR-05 outline-none border' value={(inputAnrede)} onChange={currentInputAnrede} >
                             <option>Herr</option>
                             <option>Frau</option>
                             <option>Dr.</option>
@@ -170,35 +170,35 @@ const Contact = () => {
                     </select>
             </div>
 
-            <div className='d-flex alignItem-c justifyContent-sb'>
+            <div className='d-inline-Contact d-flex alignItem-c justifyContent-sb'>
                 <label style={{color: errorVor ? '#EA2027' : ''}}>Vorname:</label>
-                <input className='d-flex w-10 w-15 p-1 borderR-05 outline-none border'
+                <input className='mt-Contact-05 d-flex w-10 w-15 p-1 borderR-05 outline-none border'
                 type="text" name="Vorname"  value={inputVor} onChange={currentInputVor}  style={{borderColor: errorVor ? '#EA2027' : ''}}/>
             </div>
 
-            <div className='d-flex alignItem-c justifyContent-sb'>
+            <div className='d-inline-Contact d-flex alignItem-c justifyContent-sb'>
                 <label style={{color: errorNach ? '#EA2027' : ''}}>Nachname:</label>
-                <input className='d-flex w-10 w-15 p-1 borderR-05 outline-none border'
+                <input className='mt-Contact-05 d-flex w-10 w-15 p-1 borderR-05 outline-none border'
                 type="text" name="Nachname"   value={inputNach} onChange={currentInputNach}  style={{borderColor: errorNach ? '#EA2027' : ''}}/>
             </div>
 
-            <div className='d-flex alignItem-c justifyContent-sb'>
+            <div className='d-inline-Contact d-flex alignItem-c justifyContent-sb'>
                 <label style={{color: (errorEmail || errorValidationEmail) ? '#EA2027' : ''}}>E-Mail:</label>
-                <input className='d-flex w-10 w-15 p-1 borderR-05 outline-none border'
+                <input className='mt-Contact-05 d-flex w-10 w-15 p-1 borderR-05 outline-none border'
                 type="Email" name="UserEmail"  ref={inputEmailRef}
                 value={inputEmail} onChange={currentInputEmail}
                 style={{borderColor: (errorEmail || errorValidationEmail) ? '#EA2027' : ''}}/>
             </div>
 
-            <div className='d-flex alignItem-c justifyContent-sb'>
+            <div className='d-inline-Contact d-flex alignItem-c justifyContent-sb'>
                 <label>Telefonnummer:</label>
-                <input className='d-flex w-10 w-15 p-1 borderR-05 outline-none border'
+                <input className='mt-Contact-05 d-flex w-10 w-15 p-1 borderR-05 outline-none border'
                 type="number" name="Telefonnummer" value={inputTel} onChange={currentInputTel}/>
             </div>
 
-            <div className='d-flex alignItem-c justifyContent-sb'>
+            <div className='d-inline-Contact d-flex alignItem-c justifyContent-sb'>
                 <label>Postleitzahl:</label>
-                <input className='d-flex w-10 w-15 p-1 borderR-05 outline-none border'
+                <input className='mt-Contact-05 d-flex w-10 w-15 p-1 borderR-05 outline-none border'
                 type="number" name="Postleitzahl" value={inputPost} onChange={currentInputPost} />
             </div>
         </div>
@@ -209,7 +209,7 @@ const Contact = () => {
         style={{borderColor: errorText ? '#EA2027' : ''}}
           ></textarea>
 
-        <button type="submit" onClick={Beforesubmission} className='mb-05 p-1 fontW-b fontS-md fontC-w bg-blue border-none borderR-05 hover '>
+        <button type="submit" onClick={Beforesubmission} className='mb-05 p-1 fontW-b fontS-md fontC-w bg-blue border-none borderR-03 hover '>
             <FaRegPaperPlane className='mr-1' />
             SENDEN
         </button>

@@ -64,7 +64,7 @@ function Comments({comments , addcomment}) {
                 </div>
            </div>
 
-           <button type="submit" className="mt-1 p-05-1 mb-2 bg-blue fontC-w fontW-b fontS-md borderR-05 border-none">Hinzufügen</button>
+           <button type="submit" className="mt-1 p-05-1 mb-2 bg-blue fontC-w fontW-b fontS-md borderR-03 border-none">Hinzufügen</button>
          </form>
          {comments.map((comment,id) =>(
            <SingleComment  key={id} comment={comment}/>
